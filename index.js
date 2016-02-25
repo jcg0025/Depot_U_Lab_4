@@ -1,21 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var booton = document.createElement('div');
+    var booton = document.createElement('button');
         booton.innerText = 'Add Block';
-        booton.style.color = 'blue';
-        booton.style.textAlign ='center';
+        booton.className = 'booton';
         document.body.appendChild(booton);
-        booton.onclick = addBlock;
-        
-        
+        booton.onclick = addBlock;        
 });
 
+
 var addBlock = function () {
-    var block = document.createElement('div');
-    block.style.display = 'inline-block';
-    block.style.marginRight = '20px';
-    block.style.width = '100px';
-    block.style.height = '100px';
-    block.style.backgroundColor = 'black';
-    document.body.appendChild(block);
+    var blockArray = document.getElementsByClassName('daBlocks');
+        for (var i = 0; i <= blockArray.length; i++) {
+        }  
+        var block = document.createElement('div');
+            block.className = 'daBlocks'; 
+            block.setAttribute('id', blockArray.length.toString())
+            block.innerText = block.id;    
+            document.body.appendChild(block);
 }
 
