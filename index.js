@@ -16,5 +16,9 @@ var addBlock = function () {
             block.setAttribute('id', blockArray.length.toString())
             block.innerText = block.id;    
             document.body.appendChild(block);
+
+            block.addEventListener('click', function() {
+                block.style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            });
 }
 
