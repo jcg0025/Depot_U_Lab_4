@@ -1,10 +1,14 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     var booton = document.createElement('button');
         booton.innerText = 'Add Block';
         booton.className = 'booton';
         document.body.appendChild(booton);
-        booton.onclick = addBlock;        
-});
+    var guard = document.createElement('p');
+        document.body.appendChild(guard);    
+        booton.onclick = addBlock;
+
+}); 
 
 
 var addBlock = function () {
@@ -32,7 +36,7 @@ var addBlock = function () {
                         }
                     } else if (oddNumID % 2 != 0) {
                         var cya = document.getElementById(block.id).previousSibling;
-                        if (cya == null) {
+                        if (cya.previousSibling.className === 'booton') {
                             alert('Element Does Not Exist');
                         } else {    
                         cya.parentNode.removeChild(cya);
@@ -41,5 +45,5 @@ var addBlock = function () {
             });        
 }   
                
-            
+         
      
