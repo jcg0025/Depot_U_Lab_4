@@ -3,10 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
         booton.innerText = 'Add Block';
         booton.className = 'booton';
         document.body.appendChild(booton);
-        booton.onclick = addBlock; 
-    var bootonGuard = document.createElement('div');
-        bootonGuard.className = 'guard';
-        document.body.appenChild(bootonGuard);       
+        booton.onclick = addBlock;        
 });
 
 
@@ -18,7 +15,7 @@ var addBlock = function () {
             block.className = 'daBlocks'; 
             block.setAttribute('id', blockArray.length.toString())
             block.innerText = block.id;   
-            document.getElementsByClassName('guard').appendChild(block);    
+            document.body.appendChild(block);    
             block.addEventListener('click', function() {
                 block.style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
             });
@@ -27,20 +24,14 @@ var addBlock = function () {
                 var evenNumID = parseInt(block.id, 10);
                 var oddNumID = parseInt(block.id, 10);
                     if (evenNumID % 2 == 0) {
-                        evenNumID += 1;
-                        var unluckyID = evenNumID.toString();
-                        console.log(unluckyID);
-                        var bye = document.getElementById(unluckyID);
+                        var bye = document.getElementById(block.id).nextSibling;
                         if (bye == null) {
                             alert('Element Does Not Exist');
                         } else {
                              bye.parentNode.removeChild(bye);
                         }
                     } else if (oddNumID % 2 != 0) {
-                        oddNumID -= 1;
-                        var notluckyID = oddNumID.toString();
-                        console.log(notluckyID);
-                        var cya = document.getElementById(notluckyID);
+                        var cya = document.getElementById(block.id).previousSibling;
                         if (cya == null) {
                             alert('Element Does Not Exist');
                         } else {    
@@ -48,9 +39,7 @@ var addBlock = function () {
                         }
                     } 
             });        
-}       
-
- 
+}   
                
             
      
