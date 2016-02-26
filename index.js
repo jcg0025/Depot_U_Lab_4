@@ -21,16 +21,34 @@ var addBlock = function () {
             });
         
             block.addEventListener('dblclick', function(){
-                
+                var evenNumID = parseInt(block.id, 10);
+                var oddNumID = parseInt(block.id, 10);
+                    if (evenNumID % 2 == 0) {
+                        evenNumID += 1;
+                        var unluckyID = evenNumID.toString();
+                        console.log(unluckyID);
+                        var bye = document.getElementById(unluckyID);
+                        if (bye == null) {
+                            alert('Element Does Not Exist');
+                        } else {
+                             bye.parentNode.removeChild(bye);
+                        }
+                    } else if (oddNumID % 2 != 0) {
+                        oddNumID -= 1;
+                        var notluckyID = oddNumID.toString();
+                        console.log(notluckyID);
+                        var cya = document.getElementById(notluckyID);
+                        if (cya == null) {
+                            alert('Element Does Not Exist');
+                        } else {    
+                        cya.parentNode.removeChild(cya);
+                        }
+                    } 
             });        
 }       
 
 
  
-            //     var numID = parseInt(block.id, 10);
-            // if (numID % 2 == 0) {
-            //     numID += 1;
-            //     var unluckyID = numID.toString();
-            //     console.log(unluckyID);    
+               
             
      
