@@ -10,13 +10,14 @@
     margin-top: 20px;
     width: 100px;
     height: 100px;
-    color: black;
+    color: transparent;
     background-color: black;
-    font-size: 50px;
+    font-size: 75px;
     text-align: center;
 }
 
 .daBlocks:hover {
     color: white;
 }
+
 
