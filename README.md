@@ -1,5 +1,6 @@
 # Depot_U_Lab_4
 Interacting with the DOM
+
 Block Functions:
 
 Hovering Over a Block will give you the block number.
