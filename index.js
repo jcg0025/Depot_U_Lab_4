@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var addBlock = function () {
     var blockArray = document.getElementsByClassName('daBlocks');
-        // for (var i = 0; i <= blockArray.length; i++) {
-        // }  
         var block = document.createElement('div');
             block.className = 'daBlocks'; 
             block.setAttribute('id', blockArray.length.toString())
